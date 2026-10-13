@@ -4,8 +4,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   title: "WEB Development",
   description: "Roadmap de Desarrollo Web y Tecnologías",
-  base: '/web-dev-docs-vitepress/',
-
+  // # base: '/web-dev-docs-vitepress/',
+  base: process.env.NODE_ENV === 'production' && !process.env.VERCEL ? '/web-dev-docs-vitepress/' : '/',
   // 👇 AQUÍ FORZAMOS LA ETIQUETA DEL MANIFEST EN EL HTML GENERADO
   head: [
     ['link', { rel: 'icon', href: '/web-dev-docs-vitepress/favicon.ico' }],
