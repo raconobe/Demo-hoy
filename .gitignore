@@ -1,0 +1,10 @@
+# Dependencias de Node
+node_modules/
+.DS_Store
+
+# Archivos de compilación de VitePress
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# Archivos temporales
+*.log
