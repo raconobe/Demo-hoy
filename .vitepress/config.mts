@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "My Awesome Project",
   description: "A VitePress Site",
+  base: '/web-dev-docs-vitepress/', // <--- Añade el nombre exacto de tu repositorio con barras
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -26,3 +27,5 @@ export default defineConfig({
     ]
   }
 })
+
+ 
