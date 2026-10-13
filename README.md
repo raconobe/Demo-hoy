@@ -294,6 +294,7 @@ Una vez que subas los cambios, puedes ir a la pestaña **Actions** en la parte s
 
 ---
 
+npm run docs:dev
 
 git add .
 git commit -m "ci: añadir flujo de trabajo para GitHub Pages"
