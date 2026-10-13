@@ -436,3 +436,18 @@ export default defineConfig({
 
 * **Tus portadas principales** (`docs/frontend/index.md`) se quedan independientes con sus diseños bonitos, títulos y botones.
 * **Todo el contenido dinámico/capítulos** se gestiona 100% desde tu bóveda en `Tecnologies/` sincronizada con Obsidian, por lo que cada cambio que hagas ahí se actualiza en la web al instante.
+
+
+
+
+---
+
+    web-dev-docs (Directo y al grano: documentación de desarrollo web).
+
+    tech-knowledge-hub (Un centro de conocimiento técnico).
+
+    dev-vault-docs (Haciendo referencia a tu bóveda de notas de desarrollo).
+    
+    
+    
+    

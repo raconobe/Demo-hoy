@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Chapter 1: Basic Structure
+# Chapter 1: Basic Structure V1.0
 
 In this chapter, we will cover the foundational building blocks of an HTML document.
 
