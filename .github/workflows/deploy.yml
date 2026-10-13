@@ -31,7 +31,7 @@ jobs:
           node-version: 20
 
       - name: Sync Obsidian files
-        run: cp -r /home/rco/Desktop/MD-Boveda-Obsidian/tecnologies ./docs/ || true
+        run: cp -r /home/rco/Desktop/MD-Vault-Obsidian/tecnologies ./docs/ || true
 
       - name: Install dependencies
         run: npm ci || npm install
