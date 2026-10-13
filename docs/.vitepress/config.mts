@@ -29,7 +29,6 @@ export default defineConfig({
           ]
         }
       ],
-
       '/tecnologies/frontend/': [
         {
           text: 'Módulo HTML',
@@ -51,12 +50,11 @@ export default defineConfig({
     }
   },
 
-  // Configuración de la PWA integrada directamente en Vite
   vite: {
     plugins: [
       VitePWA({
-        outDir: '.vitepress/dist',
         registerType: 'autoUpdate',
+        includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
         manifest: {
           name: 'Web Dev Docs',
           short_name: 'DevDocs',
@@ -64,6 +62,8 @@ export default defineConfig({
           theme_color: '#3eaf7c',
           background_color: '#ffffff',
           display: 'standalone',
+          scope: '/web-dev-docs-vitepress/',
+          start_url: '/web-dev-docs-vitepress/',
           icons: [
             {
               src: '/web-dev-docs-vitepress/pwa-192x192.png',
