@@ -2,9 +2,10 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "WEB Development",
+  base: '/web-dev-docs-vitepress/', // <--- AÑADE ESTA LÍNEA EXACTAMENTE ASÍ
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Home', link: '/'},
       { text: 'Frontend', link: '/frontend/' },
       { text: 'Backend', link: '/backend/' },
       { text: 'SO', link: '/so/' }
