@@ -1,47 +1,82 @@
 import { defineConfig } from 'vitepress'
+import { withPWA } from '@vite-pwa/vitepress'
 
-export default defineConfig({
-  title: "WEB Development",
-  base: '/web-dev-docs-vitepress/', // <--- AÑADE ESTA LÍNEA EXACTAMENTE ASÍ
-  themeConfig: {
-    nav: [
-      { text: 'Home', link: '/'},
-      { text: 'Frontend', link: '/frontend/' },
-      { text: 'Backend', link: '/backend/' },
-      { text: 'SO', link: '/so/' }
+export default withPWA(
+  defineConfig({
+    title: "WEB Development",
+    description: "Roadmap de Desarrollo Web y Tecnologías",
+    base: '/web-dev-docs-vitepress/',
+
+    head: [
+      ['link', { rel: 'icon', href: '/web-dev-docs-vitepress/favicon.ico' }],
+      ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+      ['link', { rel: 'apple-touch-icon', href: '/web-dev-docs-vitepress/apple-touch-icon.png' }]
     ],
 
-    sidebar: {
-      // Portada principal de frontend
-      '/frontend/': [
-        {
-          text: 'Módulo Frontend',
-          items: [
-            { text: 'Página Principal', link: '/frontend/' }
-          ]
-        }
+    themeConfig: {
+      nav: [
+        { text: 'Home', link: '/' },
+        { text: 'Frontend', link: '/frontend/' },
+        { text: 'Backend', link: '/backend/' },
+        { text: 'SO', link: '/so/' }
       ],
 
-      // Menú lateral que se activa automáticamente al entrar a cualquier página de tecnologías/frontend/
-      '/tecnologies/frontend/': [
-        {
-          text: 'Módulo HTML',
-          items: [
-            // Deja las rutas terminadas en / para las carpetas con index.md
-            { text: 'Capítulo 1: Estructura', link: '/tecnologies/frontend/html/HTML-Chapter-01' },
-            { text: 'Capítulo 2: Etiquetas', link: '/tecnologies/frontend/html/HTML-Chapter-02' },
-            { text: 'Capítulo 3: Formularios', link: '/tecnologies/frontend/html/HTML-Chapter-03' }
-          ]
-        },
-        {
-          text: 'Módulo CSS',
-          items: [
-            { text: 'Introducción CSS', link: '/tecnologies/frontend/css/' },
-            { text: 'Capítulo 1: Selectores', link: '/tecnologies/frontend/css/cap1' },
-            { text: 'Capítulo 2: Flexbox', link: '/tecnologies/frontend/css/cap2' }
-          ]
-        }
-      ]
+      sidebar: {
+        // Portada principal de frontend
+        '/frontend/': [
+          {
+            text: 'Módulo Frontend',
+            items: [
+              { text: 'Página Principal', link: '/frontend/' }
+            ]
+          }
+        ],
+
+        // Menú lateral de tecnologías frontend
+        '/tecnologies/frontend/': [
+          {
+            text: 'Módulo HTML',
+            items: [
+              { text: 'Capítulo 1: Estructura', link: '/tecnologies/frontend/html/HTML-Chapter-01' },
+              { text: 'Capítulo 2: Etiquetas', link: '/tecnologies/frontend/html/HTML-Chapter-02' },
+              { text: 'Capítulo 3: Formularios', link: '/tecnologies/frontend/html/HTML-Chapter-03' }
+            ]
+          },
+          {
+            text: 'Módulo CSS',
+            items: [
+              { text: 'Introducción CSS', link: '/tecnologies/frontend/css/' },
+              { text: 'Capítulo 1: Selectores', link: '/tecnologies/frontend/css/cap1' },
+              { text: 'Capítulo 2: Flexbox', link: '/tecnologies/frontend/css/cap2' }
+            ]
+          }
+        ]
+      }
+    },
+
+    pwa: {
+      outDir: '.vitepress/dist',
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'Web Dev Docs',
+        short_name: 'DevDocs',
+        description: 'Documentación técnica y desarrollo web',
+        theme_color: '#3eaf7c',
+        background_color: '#ffffff',
+        display: 'standalone',
+        icons: [
+          {
+            src: '/web-dev-docs-vitepress/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/web-dev-docs-vitepress/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      }
     }
-  }
-})
+  })
+)
