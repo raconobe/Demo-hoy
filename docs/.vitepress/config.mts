@@ -6,9 +6,13 @@ export default defineConfig({
   description: "Roadmap de Desarrollo Web y Tecnologías",
   base: '/web-dev-docs-vitepress/',
 
+  // 👇 AQUÍ FORZAMOS LA ETIQUETA DEL MANIFEST EN EL HTML GENERADO
   head: [
     ['link', { rel: 'icon', href: '/web-dev-docs-vitepress/favicon.ico' }],
+    ['link', { rel: 'manifest', href: '/web-dev-docs-vitepress/manifest.webmanifest' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
     ['link', { rel: 'apple-touch-icon', href: '/web-dev-docs-vitepress/apple-touch-icon.png' }]
   ],
 
@@ -54,6 +58,7 @@ export default defineConfig({
     plugins: [
       VitePWA({
         registerType: 'autoUpdate',
+        injectRegister: 'script-defer',
         includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
         manifest: {
           name: 'Web Dev Docs',
